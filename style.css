@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
+  justify-content: center;
+  width: 100%;
+  order: 2;
+}
+
+.card-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  order: 2;
+}
+
+.card {
+  display: flex;
+  flex-basis: 45%;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 3px 3px 3px gray;
+}
+
+.card:active {
+  opacity: 0.8;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.image-div {
+  width: 33%;
+  height: 100%;
+  background-position: center;
+}
+
+.image-div img {
+  width: 150px;
+  height: 100%;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.text-div {
+  width: 70%;
+  background-position: center;
+  margin-block-end: 2px;
+  display: inline;
+  padding-right: 10px;
+  font-weight: 500;
+  text-align: justify;
+  order: 2;
+}
+
+.text-div h2 {
+  margin: 0;
+  padding-top: 10px;
+  color: rgb(112, 41, 99);
+}
+.title {
+  padding-left: 12px;
+}
+
+@media all and (min-width: 375px) and(max-width:767px) {
+  .main-container {
+    flex-direction: column;
+    width: 100%;
+    order: 2;
+  }
+  .card-container {
+    flex-direction: column;
+    width: 100%;
+    order: 2;
+  }
+
+  .card {
+    flex-basis: 100%;
+  }
+  .text-div {
+    width: 100%;
+    background-position: center;
+    margin-block-end: 2px;
+    display: inline;
+    padding-right: 10px;
+    font-weight: 500;
+    order: 2;
+    margin-top: 10px;
+  }
+  .image-div {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    order: 2;
+  }
+
+  .image-div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+/* Sandesh created this section */
+@media screen and (max-width: 425px) {
+  .main-container {
+    width: 100%;
+    padding: 15px;
+  }
+  .card {
+    flex-basis: auto;
+    flex-direction: column;
+  }
+  .image-div {
+    width: 100%;
+  }
+  .text-div {
+    padding: 0 20px;
+    width: 100%;
+  }
+}
+/*
+flex-basis, order, margin-block-end are rarely used because there are better alternatives
+margin distorts the layout, so use carefully
+avoid giving fixed with like 150px. 300px as much as possible. Enemy of responsive
+
+*/
