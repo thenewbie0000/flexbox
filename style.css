@@ -45,9 +45,11 @@ body {
   width: 33%;
   height: 100%;
   background-position: center;
+  flex: 1
 }
 
 .image-div img {
+  object-fit: cover;
   width: 150px;
   height: 100%;
   border-radius: 10px 0px 0px 10px;
@@ -73,47 +75,8 @@ body {
   padding-left: 12px;
 }
 
-@media all and (min-width: 375px) and(max-width:767px) {
-  .main-container {
-    flex-direction: column;
-    width: 100%;
-    order: 2;
-  }
-  .card-container {
-    flex-direction: column;
-    width: 100%;
-    order: 2;
-  }
 
-  .card {
-    flex-basis: 100%;
-  }
-  .text-div {
-    width: 100%;
-    background-position: center;
-    margin-block-end: 2px;
-    display: inline;
-    padding-right: 10px;
-    font-weight: 500;
-    order: 2;
-    margin-top: 10px;
-  }
-  .image-div {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    order: 2;
-  }
-
-  .image-div img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px 10px 0 0;
-  }
-}
-
-/* Sandesh created this section */
-@media screen and (max-width: 425px) {
+@media only screen and (max-width: 1050px) {
   .main-container {
     width: 100%;
     padding: 15px;
@@ -125,14 +88,14 @@ body {
   .image-div {
     width: 100%;
   }
+
+  .image-div img{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0px 0px;
+  }
   .text-div {
     padding: 0 20px;
     width: 100%;
   }
 }
-/*
-flex-basis, order, margin-block-end are rarely used because there are better alternatives
-margin distorts the layout, so use carefully
-avoid giving fixed with like 150px. 300px as much as possible. Enemy of responsive
-
-*/
